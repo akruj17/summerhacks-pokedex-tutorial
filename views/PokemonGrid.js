@@ -28,15 +28,16 @@ const styles = StyleSheet.create({
     },
     image: {
       flex: 1,
-      resizeMode: "cover",
+      resizeMode: 'cover',
     },
     grid: {
-        width: "100%",
+        width: '100%',
     },
     gridCell: {
         margin: 5,
         flex: 1/3,
         flexDirection: 'column',
         aspectRatio: 1,
+        backgroundColor: '#ffffff'
     },
   });
