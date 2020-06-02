@@ -6,8 +6,9 @@ Getting started:
 https://docs.expo.io/get-started/installation/
 
 2. Either clone this repo or download the ZIP.
-3. Download dependencies for the app using either npm or yarn.
+3. Using the terminal, navigate into the repo directory, and download required dependencies using either npm or yarn.
 ```
+cd summerhacks-pokedex-tutorial
 npm install
 ```
 
