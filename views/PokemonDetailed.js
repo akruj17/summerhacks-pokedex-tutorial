@@ -4,7 +4,9 @@ import {getImageRequire} from '../pokemonRequires';
 
 export default function PokemonDetailed() {
     return (
-        <View></View>
+        <View>
+	    <Text>In Detailed View!</Text>
+	</View>
     )
 }
 
