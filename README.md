@@ -17,11 +17,11 @@ npm install
 expo start
 ```
 This should open a page in your browser that looks like the following.
-![Expo Screenshot](expo-screenshot.png)
+![Expo Screenshot](assets/expo-screenshot.png)
 
 5. Wait until you get the message "Building JavaScript bundle: finished in ..." Your app will not be ready to run before this shows up.
 
 6. If you are running on a physical phone, make sure you have the Expo Client app installed and scan the QRCode to open the project. If you are running on a simulator, click the appropriate button in the opened browser tab for running on either iOS or Android simulator.
 
 7. If your running app looks like this, you are ready for the demo!
-![Simulator Screenshot](simulator-screenshot.png)
+![Simulator Screenshot](assets/simulator-screenshot.png)
