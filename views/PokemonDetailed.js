@@ -4,9 +4,15 @@ import {getImageRequire} from '../pokemonRequires';
 
 export default function PokemonDetailed() {
     return (
-        <View>
-	    <Text>In Detailed View!</Text>
-	</View>
+        <View style={styles.fillParent}>
+            <Image style={styles.image} />
+            <View style={styles.infoContainer}>
+                <Text style={styles.name}> </Text>
+                <Text style={styles.property}>growth rate:</Text>
+                <Text style={styles.property}>capture rate:</Text>
+                <Text style={styles.property}>shape:</Text>
+            </View>
+        </View>
     )
 }
 
