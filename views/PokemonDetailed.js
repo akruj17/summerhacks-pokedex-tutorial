@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image} from 'react-native';
 import {getImageRequire} from '../pokemonRequires';
 
-export default function PokemonDetailed() {
+export default function PokemonDetailed(props) {
     return (
         <View style={styles.fillParent}>
             <Image style={styles.image} />
@@ -11,6 +11,8 @@ export default function PokemonDetailed() {
                 <Text style={styles.property}>growth rate:</Text>
                 <Text style={styles.property}>capture rate:</Text>
                 <Text style={styles.property}>shape:</Text>
+                <Text style={styles.biggerName}>evolves from:</Text>
+                <Image style={styles.evolvesFromImage}/>
             </View>
         </View>
     )
