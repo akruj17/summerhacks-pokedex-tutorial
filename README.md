@@ -1,5 +1,5 @@
 # summerhacks-pokedex-tutorial
-starter code for the Pokédex tutorial that will be used in the beginner mobile dev workshop
+starter code for a simple Pokémon dictionary app that will be used in the beginner mobile dev workshop for SummerHacks
 
 Getting started:
 1. This tutorial uses the Expo framework for making React Native apps. Download the Expo CLI by following the instructions at the below link. Make sure you have either the Expo Client app installed on your phone, or a phone simulator installed on your computer (The doc describes this).
