@@ -1,10 +1,13 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, Image, Text} from 'react-native';
+import {getImageRequire} from '../pokemonRequires';
 
 export default function PokemonCell(props) {
+    // id, name
     return (
         <View style={styles.fillParent}>
-            // TODO: Add pokemon image and name
+            <Image style={styles.image} source={getImageRequire(parseInt(props.id))}/>
+            <Text style={styles.name}>{props.name}</Text>
         </View>
     );
 }

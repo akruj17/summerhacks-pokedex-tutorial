@@ -1,43 +1,61 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import PokemonGrid from './views/PokemonGrid';
+import { AppLoading } from 'expo';
+import * as Font from 'expo-font';
+import PokemonDetailed from './views/PokemonDetailed';
+
+const Stack = createStackNavigator();
 
 export default class App extends React.Component {
-
+  
   constructor(props) {
     super(props);
-    // TODO : INITIALIZE STATE
+    this.state = { fontLoaded: false};
+    this.loadFontsAsync = this.loadFontsAsync.bind(this);
+  }
+  
+  async loadFontsAsync() {
+    await Font.loadAsync({
+        'Pokemon-Font': require('./assets/fonts/Pokemon-Solid.ttf'),
+      });
+    this.setState({ fontLoaded: true });
   }
 
   componentDidMount() {
-    // TODO: ONE TIME OPERATIONS
+      this.loadFontsAsync();
   }
 
   render(props) {
-    return (
-        <PokemonGrid></PokemonGrid>
+      if (!this.state.fontLoaded) {
+        return <AppLoading />
+      }
+      return (
+        <NavigationContainer>
+          <Stack.Navigator screenOptions={headerStyles}>
+            <Stack.Screen
+              name="Grid"
+              component={PokemonGrid} />
+            <Stack.Screen
+              name="Detailed"
+              component={PokemonDetailed} />
+          </Stack.Navigator>
+        </NavigationContainer>
     );
   }
 }
 
 const headerStyles = {
-  headerStyle: {
-    backgroundColor: '#ff5855',
-  },
-  headerTintColor: '#fff',
-  headerTitleStyle: {
-    fontWeight: 'bold',
-    fontSize: 30,
-  }, 
-  headerBackTitle: ' ',
-  headerTitle: 'Pokédex'
+    headerStyle: {
+      backgroundColor: '#ff5855',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontFamily: 'Pokemon-Font',
+      fontSize: 30,
+    }, 
+    headerBackTitle: ' ',
+    headerTitle: 'Pokedex'
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
